@@ -8,4 +8,10 @@ import com.abosen.mybatis.po.User;
  */
 public interface UserMapper {
     User findUserById(int id);
+
+    void insertUser(User user);
+
+    void deleteUserById(int id);
+
+    void updateUser(User user);
 }

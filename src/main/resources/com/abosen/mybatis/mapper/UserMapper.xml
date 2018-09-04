@@ -3,9 +3,34 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.abosen.mybatis.mapper.UserMapper">
+    <!-- 查询用户 -->
     <select id="findUserById" parameterType="int" resultType="user">
         SELECT *
         FROM user
         WHERE id = #{id}
     </select>
+
+    <!-- 添加用户 -->
+    <!--如果进行简单类型（String、Date、8种基本类型的包装类）的输入映射时，#{}中参数名称可以任意-->
+    <insert id="insertUser" parameterType="user">
+        insert into user (username, birthday, sex, address)
+        values (#{username}, #{birthday}, #{sex}, #{address})
+    </insert>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUserById" parameterType="int">
+        delete
+        from user
+        where id = #{id}
+    </delete>
+
+    <!--更新用户-->
+    <update id="updateUser" parameterType="user">
+        update user
+        set username = #{username},
+            birthday = #{birthday},
+            sex      = #{sex},
+            address  = #{address}
+        where id = #{id}
+    </update>
 </mapper>
