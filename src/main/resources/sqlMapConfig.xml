@@ -9,6 +9,10 @@
         <property name="db.username" value="123"/>
     </properties>
 
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
     <!-- 自定义别名 -->
     <typeAliases>
         <!-- 批量别名设置,指定需要别名设置的po类的包名。默认别名就是类名（大小写都可以） -->

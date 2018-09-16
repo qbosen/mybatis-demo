@@ -37,6 +37,8 @@ public class MybatisDemoTest {
         //由SqlSessionFactory工厂去创建SqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
         //调用sqlSession接口，去实现数据库的增删改查操作
+        //参数1: statement的id值(可以不加namespace)：
+        //参数2: 唯一入参
         User user = sqlSession.selectOne("findUserById", 1);
         System.out.println(user);
         //释放资源
