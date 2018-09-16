@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.abosen.mybatis.mapper.UserMapper">
+    <!--开启二级缓存功能-->
+    <cache/>
     <!-- 查询用户 -->
     <select id="findUserById" parameterType="int" resultType="user">
         SELECT *
