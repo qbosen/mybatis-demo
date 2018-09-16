@@ -69,6 +69,7 @@ public class CacheTest {
 
     @Test
     public void testTwoLevelCache() {
+        // 缓存命中 一次sql
         SqlSession sqlSession1 = cacheFactory.openSession();
         SqlSession sqlSession2 = cacheFactory.openSession();
 
@@ -80,6 +81,30 @@ public class CacheTest {
 
         System.out.println(mapper2.findUserById(1));
         sqlSession2.close();
+
+    }
+
+    @Test
+    public void testTwoLevelCache2() {
+        // 一次update操作 清空缓存 所以存在3次sql
+        SqlSession sqlSession1 = cacheFactory.openSession();
+        SqlSession sqlSession2 = cacheFactory.openSession();
+        SqlSession sqlSession3 = cacheFactory.openSession();
+
+        UserMapper mapper1 = sqlSession1.getMapper(UserMapper.class);
+        UserMapper mapper2 = sqlSession2.getMapper(UserMapper.class);
+        UserMapper mapper3 = sqlSession2.getMapper(UserMapper.class);
+
+        System.out.println(mapper1.findUserById(1));
+        sqlSession1.close();
+
+        User user = new User();
+        user.setId(1);
+        user.setUsername("新的名字");
+        mapper2.updateUser(user);
+
+        System.out.println(mapper3.findUserById(1));
+        sqlSession3.close();
 
     }
 }
