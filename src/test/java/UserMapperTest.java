@@ -1,7 +1,6 @@
-package com.abosen.mybatis.mapper;
-
 import java.util.Date;
 
+import com.abosen.mybatis.mapper.UserMapper;
 import com.abosen.mybatis.po.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

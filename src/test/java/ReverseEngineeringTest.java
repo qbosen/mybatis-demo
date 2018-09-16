@@ -1,5 +1,4 @@
-package com.abosen.mybatis.mapper;
-
+import com.abosen.mybatis.mapper.OrdersMapper;
 import com.abosen.mybatis.po.Orders;
 import com.abosen.mybatis.po.OrdersExample;
 import org.apache.ibatis.io.Resources;
