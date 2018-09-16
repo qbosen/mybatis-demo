@@ -10,7 +10,13 @@
     </properties>
 
     <settings>
+        <!-- 延迟加载总开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 侵入式延迟加载开关 -->
+        <setting name="aggressiveLazyLoading" value="true"/>
+        <!-- 日志打印 -->
         <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- 关闭二级缓存 -->
         <setting name="cacheEnabled" value="false"/>
     </settings>
 

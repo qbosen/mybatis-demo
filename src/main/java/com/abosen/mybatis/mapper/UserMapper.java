@@ -1,6 +1,8 @@
 package com.abosen.mybatis.mapper;
 
-import com.abosen.mybatis.po.User;
+import com.abosen.mybatis.po.*;
+
+import java.util.List;
 
 /**
  * @author qiubaisen
@@ -14,4 +16,12 @@ public interface UserMapper {
     void deleteUserById(int id);
 
     void updateUser(User user);
+
+    // 下面两个为方便测试使用
+
+    UserExtend selectUserWithOrders(int id);
+
+    OrderExtend findOrdersByUserId();
+
+    Item findItemByItemId();
 }

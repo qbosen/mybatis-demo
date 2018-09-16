@@ -62,4 +62,17 @@ public class Item {
     public void setDetail(String detail) {
         this.detail = detail == null ? null : detail.trim();
     }
+
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", pic='" + pic + '\'' +
+                ", createtime=" + createtime +
+                ", detail='" + detail + '\'' +
+                '}';
+    }
 }
